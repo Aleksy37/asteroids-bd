@@ -41,6 +41,11 @@ def main():
                 print("Game over!")
                 sys.exit()
 
+            for shot in shots:
+                if shot.collision(entity):
+                    shot.kill()
+                    entity.split()
+
         screen.fill("black")
 
         for entity in drawable:
